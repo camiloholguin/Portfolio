@@ -1,0 +1,55 @@
+:focus {
+  outline: 0;
+}
+
+html,
+body {
+  height: 100%;
+  // overflow-x: hidden;
+  // overflow-y: scroll;
+}
+
+html {
+  @include breakpoint(medium) {
+    font-size: 110%;
+  }
+  @include breakpoint(large) {
+    font-size: 115%;
+  }
+  @include breakpoint(xlarge) {
+    font-size: 125%;
+  }
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+.main {
+  @include grid-row;
+  height: 100%;
+  section {
+    width: 100%;
+    height: 100%
+  }
+}
+
+.page,
+.app {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  padding: rem-calc(0 30);
+  @include breakpoint(medium) {
+    padding: rem-calc(0 40);
+  }
+  @include breakpoint(large) {
+    padding: rem-calc(0 50);
+  }
+  @include breakpoint(xlarge) {
+    padding: rem-calc(0 60);
+  }
+}

@@ -1,0 +1,29 @@
+// Aside
+.aside {
+  @include grid-column(12);
+  @include grid-column-collapse;
+  @include breakpoint(medium) {
+    @include grid-column(7);
+    @include grid-column-collapse;
+  }
+  @include breakpoint(large) {
+    @include grid-column(6);
+    @include grid-column-collapse;
+    height: 100%;
+    position: relative;
+  }
+  @include modifier('whole') {
+    @include grid-column(12);
+    @include grid-column-collapse;
+    position: relative;
+  }
+  @include modifier('works') {
+    .content,
+    .footer {
+      display: none;
+      @include breakpoint(medium) {
+        display: block;
+      }
+    }
+  }
+}

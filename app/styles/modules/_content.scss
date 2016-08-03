@@ -1,0 +1,34 @@
+// Content
+.content {
+  @include grid-column(12);
+  @include grid-column-collapse;
+  ul {
+    list-style: none;
+    margin: rem-calc(25 0 15);
+    overflow: hidden;
+    li {
+      @include grid-column(6);
+      @include grid-column-collapse;
+      @include breakpoint(large) {
+        @include grid-column(4);
+        @include grid-column-collapse;
+      }
+      @include breakpoint(xlarge) {
+        @include grid-column(3);
+        @include grid-column-collapse;
+      }
+      span {
+        font-size: rem-calc(14);
+        color: $body-font-color;
+        background-color: $light-gray;
+        box-shadow: 1px 1px 1px $medium-gray;
+        padding: rem-calc(0 12);
+        display: inline-block;
+        margin-bottom: rem-calc(10);
+        @include breakpoint(large) {
+          margin-bottom: rem-calc(15);
+        }
+      }
+    }
+  }
+}

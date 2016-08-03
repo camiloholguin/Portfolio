@@ -1,0 +1,108 @@
+// Portfolio
+.portfolio {
+  @include grid-column(12);
+  @include grid-column-collapse;
+  height: 100%;
+  overflow: hidden;
+  margin-top: rem-calc(-20);
+  @include breakpoint(medium) {
+    @include grid-column(5);
+    @include grid-column-collapse;
+    max-width: 1000px;
+    position: fixed;
+    left: 58.33333%;
+    margin-top: 0;
+  }
+  @include breakpoint(large) {
+    @include grid-column(6);
+    @include grid-column-collapse;
+    left: 50%;
+  }
+  @include element('holder') {
+    height: 100%;
+    list-style: none;
+    margin: 0;
+  }
+  @include element('element') {
+    position: relative;
+    @include modifier('whole') {
+      @include grid-column(12);
+      @include grid-column-collapse;
+    }
+    @include modifier('half') {
+      @include grid-column(12);
+      @include grid-column-collapse;
+      @include breakpoint(large) {
+        @include grid-column(6);
+        @include grid-column-collapse;
+      }
+    }
+    a {
+      display: block;
+      &:hover {
+        & > div {
+          @include breakpoint(large) {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  @include element('about') {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    background-color: rgba($black, 0.65);
+    color: $white;
+    cursor: pointer;
+    text-align: center;
+    padding: rem-calc(0);
+    text-transform: uppercase;
+    opacity: 0;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    margin: 15px;
+    position: absolute;
+    top: 0;
+    p {
+      font-size: rem-calc(12);
+      letter-spacing: rem-calc(1);
+      margin-top: rem-calc(-20);
+    }
+    @include element('table') {
+      width: 100%;
+      height: 100%;
+      display: table;
+    }
+    @include element('cell') {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+// Transitions
+.portfolio-appear {
+  opacity: 0.01;
+  &.portfolio-appear-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+  }
+}
+
+.portfolio-enter {
+  opacity: 0.01;
+  &.portfolio-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+}
+
+.portfolio-leave {
+  opacity: 1;
+  &.portfolio-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }
+}

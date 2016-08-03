@@ -1,0 +1,27 @@
+// Wrapper
+.wrapper {
+  @include grid-column(12);
+  @include grid-column-collapse;  
+  overflow: hidden;
+  display: none;
+  @include breakpoint(medium) {
+    @include grid-column(5);
+    @include grid-column-collapse;
+    min-height: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    right: 0;
+  }
+  @include breakpoint(large) {
+    @include grid-column(6);
+    @include grid-column-collapse;
+  }
+  @include element('holder') {
+    height: 100%;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}

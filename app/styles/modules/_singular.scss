@@ -1,0 +1,56 @@
+// Singular
+.work {
+  @include grid-column(12);
+  @include grid-column-collapse;
+  @include breakpoint(large) {
+    width: 960px;
+    margin: 0 auto;
+    float: none;
+  }
+  @include element('holder') {
+    @include grid-column(12);
+    @include grid-column-collapse;
+  }
+  @include element('heading') {
+    @include grid-column(12);
+    @include grid-column-collapse;
+    @include breakpoint(medium) {
+      @include grid-column(3);
+      @include grid-column-collapse;
+    }
+    @include breakpoint(large) {
+      @include grid-column(3);
+    }
+    h5 {
+      font-family: 'alternate-gothic-no-3-d', sans-serif;
+      font-weight: $global-weight-normal;
+      text-transform: uppercase;
+      letter-spacing: rem-calc(2);
+      padding: rem-calc(5 0);
+    }
+  }
+  @include element('desciption') {
+    @include grid-column(12);
+    @include grid-column-collapse;
+    @include breakpoint(medium) {
+      @include grid-column(9);
+      @include grid-column-collapse;
+    }
+    a {
+      font-size: rem-calc(15);
+      font-family: 'alternate-gothic-no-3-d', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: rem-calc(2);
+      border-bottom: 2px $alert-color solid;
+      display: inline-block;
+    }
+    @include breakpoint(large) {
+      @include grid-column(9);
+    }
+  }
+  @include element('picture') {
+    @include grid-column(12);
+    @include grid-column-collapse;
+    padding: rem-calc(30 0 10);
+  }
+}

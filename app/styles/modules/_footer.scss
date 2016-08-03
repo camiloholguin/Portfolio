@@ -1,0 +1,56 @@
+// Footer
+.footer {
+  @include grid-column(12);
+  @include grid-column-collapse;
+  padding-top: rem-calc(30);
+  padding-bottom: rem-calc(30);
+  @include breakpoint(large) {
+    position: absolute;
+    // bottom: rem-calc(40);
+    bottom: 0;
+    margin-bottom: 0;
+  }
+  @include modifier('hide') {
+    display: none;
+  }
+  @include modifier('bottom') {
+    @include breakpoint(large) {
+      position: static;
+    }
+  }
+  @include element('contact') {
+    @include breakpoint(large) {
+      @include grid-column(6);
+      @include grid-column-collapse;
+      a {
+        color: darken($dark-gray, 10);
+        margin-top: rem-calc(6);
+        display: block;
+        position: relative;
+        z-index: 100;
+      }
+    }
+  }
+  @include element('social') {
+    @include breakpoint(large) {
+      @include grid-column(6);
+      @include grid-column-collapse;
+    }
+    ul {
+      list-style: none;
+      margin: rem-calc(15 0 0);
+      @include breakpoint(large) {
+        text-align: right;
+        margin: 0;
+      }
+      li {
+        display: inline-block;
+        margin-right: rem-calc(2);
+        [class*='icon__'] {
+          font-size: rem-calc(42);
+          color: $medium-gray;
+        }
+      }
+    }
+  }
+}

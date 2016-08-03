@@ -1,0 +1,30 @@
+// Settings
+@import "global/settings"; // Foundation settings file.
+
+// BEM
+@import "global/bem"; // Foundation settings file.
+
+// Foundation mixins & browser resets
+@import '../../node_modules/foundation-sites/scss/foundation';
+
+// Foundation global styles
+@include foundation-global-styles;
+@include foundation-typography-base;
+
+/*
+  My custom styles:
+  Add your scss files below to structure your project styles
+*/
+
+// Modules
+@import "modules/main";
+@import "modules/wrapper";
+@import "modules/aside";
+@import "modules/header";
+@import "modules/content";
+@import "modules/navigation";
+@import "modules/singular";
+@import "modules/portfolio";
+@import "modules/footer";
+@import "modules/icons";
+@import "modules/hamburger";

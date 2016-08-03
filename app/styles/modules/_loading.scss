@@ -1,0 +1,21 @@
+// loading
+.loading {
+  @include grid-column(12);
+  @include grid-column-collapse;
+  height: 100%;
+  display: table;
+  @include breakpoint(medium) {
+    @include grid-column(5);
+    @include grid-column-collapse;
+  }
+  @include breakpoint(large) {
+    @include grid-column(6);
+    @include grid-column-collapse;
+  }
+  & > div {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+}

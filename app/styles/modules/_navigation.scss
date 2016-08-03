@@ -1,0 +1,47 @@
+// Navigation
+.navigation {
+  width: 100%;
+  height: 100%;
+  background-color: rgba($white, 0.95);
+  visibility: hidden;
+  opacity: 0;
+  transition: all .25s ease .15s;
+  position: absolute;
+  z-index: 100;
+  @include modifier('opened') {
+    visibility: visible;
+    opacity: 1;
+  }
+  @include element('holder') {
+    width: 100%;
+    height: 100%;
+    display: table;
+  }
+  ul {    
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    list-style-type: none;
+    li {
+      @include grid-column(12);
+      @include grid-column-collapse;
+      text-align: center;
+      padding: rem-calc(8 0);
+      a {
+        color: $body-font-color;
+        font-weight: $global-weight-bold;
+        text-transform: uppercase;
+        letter-spacing: rem-calc(1);
+        font-size: rem-calc(36);
+        line-height: normal;
+        -webkit-transition: color 0.2s linear;
+        -moz-transition: color 0.2s linear;
+        -o-transition: color 0.2s linear;
+        transition: color 0.2s linear;
+        &:hover {
+          color: $alert-color;
+        }
+      }
+    }
+  }
+}

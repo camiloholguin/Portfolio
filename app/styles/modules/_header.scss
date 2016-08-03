@@ -1,0 +1,64 @@
+// Header
+.masthead {
+  @include grid-column(12);
+  @include grid-column-collapse;
+  background-color: $light-gray;
+  padding: rem-calc(30 0);
+  margin-bottom: rem-calc(20);
+  @include breakpoint(medium) {
+    background-color: transparent;
+    padding: rem-calc(60 0);
+  }
+  @include element('branding') {
+    @include grid-column(8);
+    @include grid-column-collapse;
+    position: relative;
+    z-index: 200;
+    @include element('logo') {
+      text-indent: -9000px;
+      padding-left: rem-calc(45);
+      display: block;
+      @include breakpoint(large) {
+        text-indent: 0;
+      }
+    }
+    [class*='icon__'] {
+      font-size: rem-calc(30);
+      color: darken($alert-color, 5);
+      position: absolute;
+    }
+  }
+  @include modifier('iconography') {
+    @include breakpoint(medium) {
+      padding-bottom: rem-calc(20);
+      margin-bottom: rem-calc(20);
+    }
+    @include element('branding__logo') {
+      @include breakpoint(medium) {
+        text-indent: -9000px;
+      }
+    }
+  }
+  @include element('navigation') {
+    @include grid-column(4);
+    @include grid-column-collapse;
+    text-align: right;
+    a {
+      font-family: 'alternate-gothic-no-3-d', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: rem-calc(2);
+      color: $body-font-color;
+      transition: color 0.5s ease;
+      &:hover {
+        color: darken($alert-color, 5);
+      }
+      @include breakpoint(large) {
+        color: $body-font-color;
+      }
+    }
+    .hamburger {
+      position: relative;
+      z-index: 200;
+    }
+  }
+}

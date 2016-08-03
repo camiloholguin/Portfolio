@@ -4,7 +4,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, compose } from 'redux';
+import { createStore } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
@@ -20,11 +20,6 @@ import rootReducer from './reducers';
 // Schema
 import schema from './schema/index';
 
-// Enhancer
-const enhancer = compose(
-  window.devToolsExtension && window.devToolsExtension()
-);
-
 // State
 const defaultState = {
   schema,
@@ -33,8 +28,7 @@ const defaultState = {
 // Store
 const store = createStore(
   rootReducer,
-  defaultState,
-  enhancer
+  defaultState
 );
 
 // History

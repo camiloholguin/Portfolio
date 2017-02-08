@@ -58,7 +58,7 @@ const schema = {
       large: './images/misskabi/large.jpg',
     },
     class: 'portfolio__element--half',
-    excerpt: 'Misskabi is an ecommerce website selling accessories and clothes. They focus on promote and enhance to afro trends fashion trough a dynamic full of colors.',
+    excerpt: 'Misskabi is an ecommerce website selling accessories and clothes. They focus on promote and enhance to afro trends fashion through a dynamic full of colors.',
     link: 'http://www.misskabi.com',
     skills: 'Woocommerce',
   }, {
@@ -68,7 +68,7 @@ const schema = {
       large: './images/cdn/large.jpg',
     },
     class: 'portfolio__element--half',
-    excerpt: 'CDN Printing is an ecommerce website selling business cards, flyer, brochures, letterhead and much more. For over 60 years, CDN Printing serves clients in the Montreal area.',
+    excerpt: 'CDN Printing is an ecommerce website selling business cards, flyers, brochures, letterhead and much more. For over 60 years, CDN Printing serves clients in the Montreal area.',
     link: 'http://www.reprocdn.com',
     skills: 'Woocommerce',
   }, {
@@ -88,7 +88,7 @@ const schema = {
       large: './images/innovationweb/large.jpg',
     },
     class: 'portfolio__element--half',
-    excerpt: 'Innovationweb is a web agency in Montreal which specializes in website design for the restaurants, as well as for small and medium enterprises.',
+    excerpt: 'Innovationweb is a web agency in Montreal which specializes in website design for the restaurants, as well for small and medium enterprises.',
     link: 'http://www.innovationweb.ca',
     skills: 'Wordpress',
   }, {
@@ -108,7 +108,7 @@ const schema = {
       large: './images/stationf/large.jpg',
     },
     class: 'portfolio__element--half',
-    excerpt: 'Open since 2006 StationF is a french restaurant. StationF is the ideal address for eating a convivial and friendly meal in a congenial atmosphere.',
+    excerpt: 'Open since 2006, StationF is an unmissable place in Angus District for anyone wishing to eat well in a warm atmosphere. The exceptional quality of our cuisine will delight your senses more then once!.',
     link: 'http://www.stationf.ca',
     skills: 'Perch',
   }],

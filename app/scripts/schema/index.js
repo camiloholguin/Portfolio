@@ -52,16 +52,6 @@ const schema = {
     content: 'Page Not Found',
   },
   works: [{
-    title: 'Misskabi',
-    image: {
-      small: './images/misskabi/small.jpg',
-      large: './images/misskabi/large.jpg',
-    },
-    class: 'portfolio__element--half',
-    excerpt: 'Misskabi is an ecommerce website selling accessories and clothes. They focus on promote and enhance to afro trends fashion through a dynamic full of colors.',
-    link: 'http://www.misskabi.com',
-    skills: 'Woocommerce',
-  }, {
     title: 'CDN',
     image: {
       small: './images/cdn/small.jpg',

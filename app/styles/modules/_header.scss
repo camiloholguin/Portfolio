@@ -8,6 +8,7 @@
   @include breakpoint(medium) {
     background-color: transparent;
     padding: rem-calc(60 0);
+    margin-bottom: rem-calc(0);
   }
   @include element('branding') {
     @include grid-column(8);

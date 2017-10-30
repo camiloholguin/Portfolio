@@ -21,31 +21,38 @@
     @include breakpoint(large) {
       @include grid-column(3);
     }
-    h5 {
+    span {
       font-family: 'alternate-gothic-no-3-d', sans-serif;
-      font-weight: $global-weight-normal;
       text-transform: uppercase;
       letter-spacing: rem-calc(2);
-      padding: rem-calc(5 0);
+      border-bottom: 2px $warning-color solid;
+      margin-bottom: rem-calc(10);
+      display: inline-block;
     }
   }
   @include element('desciption') {
     @include grid-column(12);
     @include grid-column-collapse;
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       @include grid-column(9);
-      @include grid-column-collapse;
     }
     a {
-      font-size: rem-calc(15);
+      font-size: rem-calc(14);
       font-family: 'alternate-gothic-no-3-d', sans-serif;
       text-transform: uppercase;
       letter-spacing: rem-calc(2);
-      border-bottom: 2px $alert-color solid;
+      line-height: normal;
+      color: $white;
+      background-color: $alert-color;
       display: inline-block;
-    }
-    @include breakpoint(large) {
-      @include grid-column(9);
+      padding: rem-calc(6 12);
+      margin-bottom: rem-calc(-5);
+      -webkit-transition: background-color 300ms linear;
+      -ms-transition: background-color 300ms linear;
+      transition: background-color 300ms linear;
+      &:hover {
+        background-color: $warning-color;
+      }
     }
   }
   @include element('picture') {

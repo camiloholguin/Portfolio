@@ -49,9 +49,9 @@
     }
   }
   @include element('about') {
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);
-    background-color: rgba($black, 0.65);
+    width: calc(100%);
+    height: calc(100%);
+    background-color: rgba($warning-color, 0.35);
     color: $white;
     cursor: pointer;
     text-align: center;
@@ -62,13 +62,12 @@
     transition-duration: 0.8s;
     -webkit-transition-property: opacity;
     transition-property: opacity;
-    margin: 15px;
+    margin: 0;
     position: absolute;
     top: 0;
     p {
       font-size: rem-calc(12);
       letter-spacing: rem-calc(1);
-      margin-top: rem-calc(-20);
     }
     @include element('table') {
       width: 100%;

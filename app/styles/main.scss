@@ -1,11 +1,11 @@
-// Settings
-@import "global/settings"; // Foundation settings file.
-
 // BEM
 @import "global/bem"; // Foundation settings file.
 
 // Foundation mixins & browser resets
 @import '../../node_modules/foundation-sites/scss/foundation';
+
+// Settings
+@import "global/settings"; // Foundation settings file.
 
 // Foundation global styles
 @include foundation-global-styles;

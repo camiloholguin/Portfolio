@@ -16,27 +16,27 @@ const schema = {
   },
   summary: {
     heading: 'Hello,',
-    content: 'I’m a web developer with more than 5 years of experience. I’m extremely passionate about web development. I’m strongly focused on modularity and maintainability and I love work with Wordpress.',
+    content: 'I’m a web developer with more than 8 years of experience. I’m extremely passionate about web development. I’m strongly focused on modularity and maintainability and I love work with Wordpress.',
     expertise: [{
+      name: 'HTML5, CSS3',
+    }, {
+      name: 'Sass, Less',
+    }, {
       name: 'Wordpress',
     }, {
-      name: 'Joomla',
-    }, {
-      name: 'Perch',
-    }, {
-      name: 'JavaScript',
+      name: 'Javascript',
     }, {
       name: 'jQuery',
     }, {
+      name: 'React, Redux',
+    }, {
       name: 'Underscore',
     }, {
-      name: 'React',
+      name: 'Grunt, Gulp',
     }, {
-      name: 'Grunt / Gulp',
+      name: 'Responsive',
     }, {
-      name: 'Sass / Less',
-    }, {
-      name: 'BEM CSS',
+      name: 'Cross-Browser',
     }, {
       name: 'Mobile First',
     }, {
@@ -52,25 +52,15 @@ const schema = {
     content: 'Page Not Found',
   },
   works: [{
-    title: 'Misskabi',
-    image: {
-      small: './images/misskabi/small.jpg',
-      large: './images/misskabi/large.jpg',
-    },
-    class: 'portfolio__element--half',
-    excerpt: 'Misskabi is an ecommerce website selling accessories and clothes. They focus on promote and enhance to afro trends fashion through a dynamic full of colors.',
-    link: 'http://www.misskabi.com',
-    skills: 'Woocommerce',
-  }, {
-    title: 'CDN',
+    title: 'CDN Print & Design',
     image: {
       small: './images/cdn/small.jpg',
       large: './images/cdn/large.jpg',
     },
     class: 'portfolio__element--half',
-    excerpt: 'CDN Printing is an ecommerce website selling business cards, flyers, brochures, letterhead and much more. For over 60 years, CDN Printing serves clients in the Montreal area.',
+    excerpt: 'CDN Print & Design is an e-commerce website that sells business cards, flyers, brochures, letterhead and much more.',
     link: 'http://www.reprocdn.com',
-    skills: 'Woocommerce',
+    skills: 'Wordpress',
   }, {
     title: 'learn24va',
     image: {
@@ -78,7 +68,7 @@ const schema = {
       large: './images/learn/large.jpg',
     },
     class: 'portfolio__element--half',
-    excerpt: 'Learn24VA is an initiative of the Virginia Department of Education. This portal aggregates digital tools, content, and resources to support teaching and learning.',
+    excerpt: 'Learn24VA is an initiative of the Virginia Department of Education. This portal aggregates digital tools to support teaching and learning.',
     link: 'http://www.learn24va.org',
     skills: 'Wordpress',
   }, {
@@ -88,29 +78,19 @@ const schema = {
       large: './images/innovationweb/large.jpg',
     },
     class: 'portfolio__element--half',
-    excerpt: 'Innovationweb is a web agency in Montreal which specializes in website design for the restaurants, as well for small and medium enterprises.',
+    excerpt: 'Innovationweb is a web agency which specializes in website design for the restaurants, as well for small and medium enterprises.',
     link: 'http://www.innovationweb.ca',
     skills: 'Wordpress',
   }, {
-    title: 'Hus Hola',
+    title: 'Centro Nacional de Memoria Histórica',
     image: {
-      small: './images/hola/small.jpg',
-      large: './images/hola/large.jpg',
+      small: './images/memoria/small.jpg',
+      large: './images/memoria/large.jpg',
     },
     class: 'portfolio__element--half',
-    excerpt: 'Hus Hola have over 40 years in Medellin, they focus on marketing of educational games and social expression products such as bags and wrapping paper.',
-    link: 'http://www.hus-hola.com/',
-    skills: 'Wordpress',
-  }, {
-    title: 'StationF',
-    image: {
-      small: './images/stationf/small.jpg',
-      large: './images/stationf/large.jpg',
-    },
-    class: 'portfolio__element--half',
-    excerpt: 'Open since 2006, StationF is an unmissable place in Angus District for anyone wishing to eat well in a warm atmosphere. The exceptional quality of our cuisine will delight your senses more then once!.',
-    link: 'http://www.stationf.ca',
-    skills: 'Perch',
+    excerpt: 'The National Center for Historical Memory’s purpose is to contribute to the comprehensive reparation and to the right to the truth for the victims of the Colombian armed conflic as well as society in general.',
+    link: 'http://www.centrodememoriahistorica.gov.co',
+    skills: 'Joomla',
   }],
 };
 

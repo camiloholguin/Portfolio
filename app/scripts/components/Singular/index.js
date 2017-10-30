@@ -20,7 +20,7 @@ function Singular({ schema, active }) {
         <div className="work__holder">
           <ReactCSSTransitionGroup transitionName="portfolio" transitionAppear transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
             <div className="work__heading">
-              <h5>Project info</h5>
+              <span>{work.skills}</span>
             </div>
             <div className="work__desciption">
               <p>{work.excerpt}</p>

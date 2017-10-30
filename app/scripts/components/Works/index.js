@@ -25,14 +25,7 @@ function Works({ schema, selectWork }) {
               <ReactCSSTransitionGroup transitionName="portfolio" transitionAppear transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
                 <a name={elem.title}>
                   <img src={elem.image.small} role="presentation" />
-                  <div className="portfolio__about">
-                    <div className="portfolio__about__table">
-                      <div className="portfolio__about__cell">
-                        <h5>{elem.title}</h5>
-                        <p>{elem.skills}</p>
-                      </div>
-                    </div>
-                  </div>
+                  <div className="portfolio__about"></div>
                 </a>
               </ReactCSSTransitionGroup>
             </li>

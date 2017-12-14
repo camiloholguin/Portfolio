@@ -29,11 +29,6 @@ function Footer({ schema, active }) {
                 <span className="icon__linkedin"></span>
               </a>
             </li>
-            <li>
-              <a target="_blank" href={schema.footer.twitter}>
-                <span className="icon__twitter"></span>
-              </a>
-            </li>
           </ul>
         </div>
       </div>

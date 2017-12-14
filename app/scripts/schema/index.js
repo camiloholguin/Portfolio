@@ -52,6 +52,16 @@ const schema = {
     content: 'Page Not Found',
   },
   works: [{
+    title: 'Reveal',
+    image: {
+      small: './images/reveal/small.jpg',
+      large: './images/reveal/large.jpg',
+    },
+    class: '',
+    excerpt: 'Reveal is a premium Photography WordPress theme that enables you to create a professional portfolio website and manage your blog.',
+    link: 'https://demos.synergiedigitale.com/reveal/',
+    skills: 'Wordpress',
+  }, {
     title: 'CDN Print & Design',
     image: {
       small: './images/cdn/small.jpg',

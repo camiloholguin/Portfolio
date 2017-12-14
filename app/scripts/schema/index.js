@@ -57,7 +57,7 @@ const schema = {
       small: './images/reveal/small.jpg',
       large: './images/reveal/large.jpg',
     },
-    class: '',
+    class: 'portfolio__element--half',
     excerpt: 'Reveal is a premium Photography WordPress theme that enables you to create a professional portfolio website and manage your blog.',
     link: 'https://demos.synergiedigitale.com/reveal/',
     skills: 'Wordpress',
@@ -91,6 +91,16 @@ const schema = {
     excerpt: 'Innovationweb is a web agency which specializes in website design for the restaurants, as well for small and medium enterprises.',
     link: 'http://www.innovationweb.ca',
     skills: 'Wordpress',
+  }, {
+    title: 'Perfectw',
+    image: {
+      small: './images/perfectw/small.jpg',
+      large: './images/perfectw/large.jpg',
+    },
+    class: 'portfolio__element--half',
+    excerpt: 'PerfectW is a company formed to work with individuals and families to meet their housing needs.',
+    link: 'http://perfectw.ca',
+    skills: 'Perch CMS',
   }, {
     title: 'Centro Nacional de Memoria Histórica',
     image: {

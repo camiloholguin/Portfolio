@@ -59,5 +59,14 @@
     @include grid-column(12);
     @include grid-column-collapse;
     padding: rem-calc(30 0 10);
+    div {
+      margin: rem-calc(55) auto 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      @include breakpoint(large) {
+        margin: rem-calc(180) auto 0;
+      }
+    }
   }
 }

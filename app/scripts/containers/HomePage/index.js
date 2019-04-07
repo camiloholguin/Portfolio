@@ -1,9 +1,14 @@
 /**
  * HomePage
  */
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import DocumentTitle from 'react-document-title';
+import classNames from 'classnames';
+
+// Actions
+import * as actions from '../../actions';
 
 // Components
 import Header from '../../components/Header';
@@ -14,12 +19,13 @@ import Navigation from '../../components/Navigation';
 
 const propTypes = {
   schema: PropTypes.object,
+  sidebar: PropTypes.bool,
 };
 
-function HomePage({ schema }) {
+function HomePage({ schema, sidebar }) {
   return (
     <DocumentTitle title={schema.title.home}>
-      <section>
+      <section className={classNames('app', { 'app--navigation': sidebar })}>
         <div className="aside">
           <Navigation />
           <Header />
@@ -37,7 +43,8 @@ HomePage.propTypes = propTypes;
 function mapStateToProps(state) {
   return {
     schema: state.schema,
+    sidebar: state.sidebar,
   };
 }
 
-export default connect(mapStateToProps)(HomePage);
+export default connect(mapStateToProps, actions)(HomePage);

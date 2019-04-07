@@ -2,11 +2,9 @@
 .masthead {
   @include grid-column(12);
   @include grid-column-collapse;
-  background-color: $light-gray;
-  padding: rem-calc(30 0);
+  padding: rem-calc(15 0 10);
   margin-bottom: rem-calc(20);
   @include breakpoint(medium) {
-    background-color: transparent;
     padding: rem-calc(60 0);
     margin-bottom: rem-calc(0);
   }

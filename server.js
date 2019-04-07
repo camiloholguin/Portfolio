@@ -1,22 +1,22 @@
-const path = require('path');
-const webpack = require('webpack');
+const Webpack = require('webpack');
 const config = require('./webpack.config');
 const WebpackDevServer = require('webpack-dev-server');
 
-const compiler = webpack(config);
+const compiler = Webpack(config);
 const PORT = 3000;
 
-const server = new WebpackDevServer(compiler, {
+const devServerOptions = Object.assign({}, {
   contentBase: config.output.path,
   publicPath: config.output.publicPath,
   hot: true,
   stats: {
-    colors: true
+    colors: true,
   },
-  historyApiFallback: true
+  historyApiFallback: true,
 });
 
-server.listen(PORT, 'localhost', function(err) {
-  if (err) return console.log(err);
+const server = new WebpackDevServer(compiler, devServerOptions);
+
+server.listen(PORT, 'localhost', () => {
   console.log(`Listening at ${PORT}`);
 });

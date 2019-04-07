@@ -1,8 +1,9 @@
 /**
  * Navigation
  */
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';

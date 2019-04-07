@@ -3,12 +3,13 @@
 /**
  * Works
  */
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
 import { Scrollbars } from 'react-custom-scrollbars';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import * as actions from '../../actions';
 
 const propTypes = {
   schema: PropTypes.object,

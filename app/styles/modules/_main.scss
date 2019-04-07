@@ -41,6 +41,12 @@ textarea {
   height: 100%;
 }
 
+.app {
+  @include modifier('navigation') {
+    overflow: hidden;
+  }
+}
+
 .container {
   padding: rem-calc(0 30);
   @include breakpoint(medium) {

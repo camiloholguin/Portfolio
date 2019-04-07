@@ -3,8 +3,11 @@
 /**
  * Singular
  */
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Img from 'react-image';
+import { ClipLoader } from 'react-spinners';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const propTypes = {
@@ -27,7 +30,7 @@ function Singular({ schema, active }) {
               <a target="_blank" href={work.link} className="link">Visit site</a>
             </div>
             <div className="work__picture">
-              <img src={work.image.large} role="presentation" />
+              <Img src={work.image.large} loader={<ClipLoader color={'#f1404b'} />} />
             </div>
           </ReactCSSTransitionGroup>
         </div>

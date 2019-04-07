@@ -1,5 +1,5 @@
 /**
- * Hello
+ * Active
  */
 import { WORK_SELECTED } from '../actions/types';
 

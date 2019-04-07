@@ -2,17 +2,17 @@
  * Reducers
  */
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import { connectRouter } from 'connected-react-router';
 
 import active from './active';
 import schema from './schema';
 import sidebar from './sidebar';
 
-const rootReducer = combineReducers({
+const rootReducer = history => combineReducers({
   active,
   schema,
   sidebar,
-  routing: routerReducer,
+  router: connectRouter(history),
 });
 
 export default rootReducer;

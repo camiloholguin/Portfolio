@@ -5,49 +5,48 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { syncHistoryWithStore } from 'react-router-redux';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import { createBrowserHistory }  from 'history';
 
 // Components
-import Main from './main';
 import WorksPage from './containers/WorksPage';
 import HomePage from './containers/HomePage';
 import NotFoundPage from './containers/NotFoundPage';
 
-// rootReducer
-import rootReducer from './reducers';
+// createRootReducer
+import createRootReducer from './reducers';
 
 // Schema
 import schema from './schema/index';
+
+// Styles
+import '../styles/main.scss';
 
 // State
 const defaultState = {
   schema,
 };
 
+// History
+const history = createBrowserHistory();
+
 // Store
 const store = createStore(
-  rootReducer,
-  defaultState
-);
-
-// History
-const history = syncHistoryWithStore(
-  browserHistory,
-  store
+  createRootReducer(history),
+  defaultState,
 );
 
 // Routes
 const Routes = (
   <Provider store={store}>
-    <Router history={history}>
-      <Route path="/" component={Main}>
-        <IndexRoute component={HomePage} />
-        <Route path="/" component={HomePage} />
+    <ConnectedRouter history={history}>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
         <Route path="/works" component={WorksPage} />
-        <Route path="*" component={NotFoundPage} />
-      </Route>
-    </Router>
+        <Route component={NotFoundPage} />
+      </Switch>
+    </ConnectedRouter>
   </Provider>
 );
 

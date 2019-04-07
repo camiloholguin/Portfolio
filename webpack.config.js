@@ -2,19 +2,23 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlPlugin = require('html-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractText = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const common = {
   context: path.join(__dirname, 'app'),
 
   module: {
-    loaders: [{
+    rules: [{
+      exclude: /node_modules|packages/,
       test: /\.js$/,
-      exclude: /node_modules/,
-      loaders: ['react-hot', 'babel']
-    }]
-  }
+      use: [{
+        loader: 'babel-loader',
+      }],
+    }],
+  },
 };
 
 const development = {
@@ -23,82 +27,123 @@ const development = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './scripts/index'
+    './scripts/index',
   ],
 
   output: {
     path: path.join(__dirname, '/app/'),
     publicPath: 'http://localhost:3000/',
-    filename: '[name].js'
+    filename: '[name].js',
   },
 
   externals: {
     'react/addons': true,
     'react/lib/ExecutionEnvironment': true,
-    'react/lib/ReactContext': true
+    'react/lib/ReactContext': true,
   },
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.scss$/,
-      loader: 'style-loader!css!sass-loader'
+      use: [{
+        loader: 'style-loader',
+      }, {
+        loader: 'css-loader',
+      }, {
+        loader: 'sass-loader',
+      }],
     }, {
       test: /\.(jpe?g|png|gif|svg)$/i,
-      loaders: [
-        'file?hash=sha512&digest=hex',
-        'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-      ]
+      use: [{
+        loader: 'image-webpack-loader',
+        options: {
+          bypassOnDebug: true,
+          gifsicle: {
+            interlaced: false,
+          },
+          optipng: {
+            enabled: false,
+          },
+          pngquant: {
+            quality: '65-90',
+            speed: 4,
+          },
+        },
+      }],
     }, {
-      test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-      loader: 'file-loader'
-    }]
+      test: /\.(ttf|eot|woff|jpg|png|svg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      }],
+    }],
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ]
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };
 
 const production = {
   output: {
-    path: path.join(__dirname, '/dist/'),
-    publicPath: './',
-    filename: 'scripts/[name].js'
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    filename: 'scripts/[name].js',
   },
 
   entry: {
     main: ['./scripts/index'],
   },
 
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+    minimizer: [
+      new TerserJSPlugin({}),
+      new OptimizeCSSAssetsPlugin({}),
+    ],
+  },
+
   module: {
-    loaders: [{
+    rules: [{
       test: /\.scss$/,
-      loader: ExtractText.extract(['css', 'sass'], {
-        publicPath: '../'
-      })
+      use: [{
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+          publicPath: '../',
+        },
+      }, {
+        loader: 'css-loader',
+      }, {
+        loader: 'sass-loader',
+      }],
     }, {
       test: /\.(jpe?g|png|gif|svg)$/i,
-      loaders: [
-        'file?hash=sha512&digest=hex&name=[path][name].[ext]',
-        'image-webpack',
-      ]
+      use: [{
+        loader: 'image-webpack-loader',
+      }],
     }, {
-      test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-      loader: 'file?name=[path][name].[ext]'
-    }]
+      test: /\.(ttf|eot|woff|jpg|png|svg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      }],
+    }],
   },
 
   plugins: [
-    new ExtractText('styles/[name].css'),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].css',
+      chunkFilename: 'styles/[id].css',
     }),
     new CopyWebpackPlugin([{
       from: './images/',
@@ -108,15 +153,15 @@ const production = {
         '*.DS_Store',
         'Thumbs.db',
         'ehthumbs.db',
-      ]
+      ],
     }),
     new HtmlPlugin({
       title: 'Camilo Holguin | Web developer',
       renderId: 'main',
       renderClass: 'main',
       template: 'index.ejs',
-    })
-  ]
+    }),
+  ],
 };
 
 if (process.env.NODE_ENV === 'production') {

@@ -52,17 +52,7 @@ const schema = {
     content: 'Page Not Found',
   },
   works: [{
-    title: 'Reeal',
-    image: {
-      small: './images/reeal/small.jpg',
-      large: './images/reeal/large.jpg',
-    },
-    class: 'portfolio__element--half',
-    excerpt: 'Reeal is a premium Photography WordPress theme that enables you to create a professional portfolio website and manage your blog.',
-    link: 'https://reeal.synergiedigitale.com',
-    skills: 'Wordpress',
-  }, {
-    title: 'CDN Print & Design',
+    title: 'CDN',
     image: {
       small: './images/cdn/small.jpg',
       large: './images/cdn/large.jpg',

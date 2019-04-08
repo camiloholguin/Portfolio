@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const common = {
-  context: path.join(__dirname, 'app'),
+  context: path.resolve(__dirname, 'app'),
 
   module: {
     rules: [{
@@ -31,7 +31,7 @@ const development = {
   ],
 
   output: {
-    path: path.join(__dirname, '/app/'),
+    path: path.resolve(__dirname, 'app'),
     publicPath: 'http://localhost:3000/',
     filename: '[name].js',
   },
@@ -147,7 +147,10 @@ const production = {
     }),
     new CopyWebpackPlugin([{
       from: './images/',
-      to: path.join(__dirname, '/dist/images/'),
+      to: path.resolve(__dirname, 'dist/images/'),
+    }, {
+      from: '.htaccess',
+      to: path.resolve(__dirname, 'dist'),
     }], {
       ignore: [
         '*.DS_Store',
